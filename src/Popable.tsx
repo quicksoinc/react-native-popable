@@ -136,6 +136,14 @@ const Popable = forwardRef<PopableManager, PopableProps>(function Popable(
     childrenRef.current?.measureInWindow((x, y, width, height) => {
       setChildrenLayout({ x, y, width, height });
     });
+
+    if (visible) {
+      popoverRef.current?.measure(
+        (_x, _y, _width, _height, pageX, pageY) => {
+          setPopoverPagePosition({ left: pageX, top: pageY });
+        }
+      );
+    }
   }, [childrenRef]);
 
   useEffect(() => {

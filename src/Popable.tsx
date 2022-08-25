@@ -205,7 +205,7 @@ const Popable = forwardRef<PopableManager, PopableProps>(function Popable(
   return (
     <View style={[styles.container, wrapperStyle]}>
       <Backdrop
-        visible={isPopoverVisible}
+        visible={!!isPopoverVisible}
         onPress={handleHidePopover}
         popoverRef={popoverRef}
         childrenRef={childrenRef}

@@ -4,7 +4,7 @@ import React, {
   useEffect,
   useImperativeHandle,
   useRef,
-  useState,
+  useState
 } from 'react';
 import {
   Platform,
@@ -13,7 +13,7 @@ import {
   StyleSheet,
   useWindowDimensions,
   View,
-  ViewProps,
+  ViewProps
 } from 'react-native';
 import Backdrop from './Backdrop';
 import Popover, { PopoverProps } from './Popover';
@@ -205,7 +205,7 @@ const Popable = forwardRef<PopableManager, PopableProps>(function Popable(
   return (
     <View style={[styles.container, wrapperStyle]}>
       <Backdrop
-        visible={isInteractive && popoverVisible}
+        visible={isPopoverVisible}
         onPress={handleHidePopover}
         popoverRef={popoverRef}
         childrenRef={childrenRef}
